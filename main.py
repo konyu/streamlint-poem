@@ -33,11 +33,12 @@ if st.session_state["authentication_status"]:
 elif st.session_state["authentication_status"] is False:
     ## ログイン成功ログイン失敗
     st.error('Username/password is incorrect')
+    st.stop()  # 処理を中断
 
 elif st.session_state["authentication_status"] is None:
     ## デフォルト
     st.warning('Please enter your username and password')
-
+    st.stop()  # 処理を中断
 
 
 # タイトルと説明
