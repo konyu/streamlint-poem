@@ -1,0 +1,10 @@
+cookie:
+  expiry_days: 1
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    konyuDEMO:
+      email: konyu@example.com
+      name: konyu
+      password: $2b$12$eIEq788GS.PqEWI5Y.GA4uzGSNpa1MS/pk3/yP13deUMQ0WlU9l16

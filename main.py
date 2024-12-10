@@ -4,6 +4,41 @@ import os
 from langchain_ollama import OllamaLLM
 from langchain_community.chat_models import ChatOpenAI
 
+import streamlit_authenticator as stauth
+
+import yaml
+from yaml.loader import SafeLoader
+
+## ユーザー設定読み込み
+yaml_path = "config.yaml"
+
+with open(yaml_path) as file:
+    config = yaml.load(file, Loader=SafeLoader)
+
+authenticator = stauth.Authenticate(
+    credentials=config['credentials'],
+    cookie_name=config['cookie']['name'],
+    cookie_key=config['cookie']['key'],
+    cookie_expiry_days=config['cookie']['expiry_days'],
+)
+
+## UI
+authenticator.login()
+if st.session_state["authentication_status"]:
+    ## ログイン成功
+    with st.sidebar:
+        st.markdown(f'## Welcome *{st.session_state["name"]}*')
+        authenticator.logout('Logout', 'sidebar')
+
+elif st.session_state["authentication_status"] is False:
+    ## ログイン成功ログイン失敗
+    st.error('Username/password is incorrect')
+
+elif st.session_state["authentication_status"] is None:
+    ## デフォルト
+    st.warning('Please enter your username and password')
+
+
 
 # タイトルと説明
 st.title("天気感覚ポエム")
