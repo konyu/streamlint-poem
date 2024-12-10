@@ -1,0 +1,55 @@
+# Python関連
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+venv/
+ENV/
+env/
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Streamlit関連
+.streamlit/
+
+# Virtual Environment関連
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# VSCode関連
+.vscode/
+*.code-workspace
+
+# MacOS関連
+.DS_Store
+
+# ログファイル
+*.log
+*.out
+
+# キャッシュや一時ファイル
+*.swp
+*.swo
+*.tmp
+*.bak
+*.old
+*.orig
+*.pyc
+*.class
+*.idea/
+
+# Configや環境変数
+.env
+.env.*
+.secret
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Git関連
+*.lock
